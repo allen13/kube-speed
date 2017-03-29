@@ -31,7 +31,7 @@ func Start(completionURL string, kubeSpeedImage string) {
 		for range ticker.C {
 			requestID := uuid.New()
 			requests[requestID] = time.Now()
-			kubeClient.CreateKubeSpeedJob(requestID, completionURL, kubeSpeedImage)
+			err = kubeClient.CreateKubeSpeedJob(requestID, completionURL, kubeSpeedImage)
 			if err != nil {
 				log.Println(err)
 			}

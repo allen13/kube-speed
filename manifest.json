@@ -1,0 +1,22 @@
+{
+    "dependencies": {
+        "github.com/allen13/kube-source": {
+            "branch": "master"
+        },
+        "github.com/docopt/docopt-go": {
+            "branch": "master"
+        },
+        "github.com/labstack/echo": {
+            "branch": "master"
+        },
+        "github.com/pborman/uuid": {
+            "branch": "master"
+        },
+        "github.com/satori/go.uuid": {
+            "branch": "master"
+        },
+        "k8s.io/client-go": {
+            "version": "^2.0.0"
+        }
+    }
+}

@@ -1,10 +1,10 @@
 package main
 
 import (
-	"log"
-	"github.com/docopt/docopt-go"
-	"github.com/allen13/kube-speed/pkg/server"
 	"github.com/allen13/kube-speed/pkg/job"
+	"github.com/allen13/kube-speed/pkg/server"
+	"github.com/docopt/docopt-go"
+	"log"
 	"strconv"
 )
 
@@ -12,7 +12,7 @@ const version = "kube-speed 0.1.0"
 const usage = `
 Usage:
 	kube-speed (job|server) [--completion-url=<url>] [--kube-speed-image=<image>] [--job-count=<count>]
-	kube-speed job <request-id>
+	kube-speed job <request-id> [--completion-url=<url>]
 	kube-speed --help
 	kube-speed --version
 
@@ -31,7 +31,7 @@ func main() {
 		log.Fatalln(err)
 	}
 	completionURL := args["--completion-url"].(string)
-	kubeSpeedImage :=  args["--kube-speed-image"].(string)
+	kubeSpeedImage := args["--kube-speed-image"].(string)
 
 	jobCount, err := strconv.Atoi(args["--job-count"].(string))
 	if err != nil {

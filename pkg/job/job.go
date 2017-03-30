@@ -1,18 +1,18 @@
 package job
 
 import (
+	"bytes"
+	"encoding/json"
+	"github.com/allen13/kube-speed/pkg/server"
 	"log"
 	"net/http"
 	"time"
-	"github.com/allen13/kube-speed/pkg/server"
-	"bytes"
-	"encoding/json"
 )
 
 func Run(completionURL string, requestId string) {
 	startTime := time.Now()
 	request := server.Request{
-		ID: requestId,
+		ID:             requestId,
 		ContainerStart: startTime,
 	}
 

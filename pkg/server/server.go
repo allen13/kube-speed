@@ -5,9 +5,9 @@ import (
 	"log"
 	"time"
 
+	"github.com/allen13/kube-speed/pkg/kubernetesjob"
 	"github.com/labstack/echo"
 	"github.com/pborman/uuid"
-	"github.com/allen13/kube-speed/pkg/kubernetesjob"
 )
 
 //Request that captures container start time

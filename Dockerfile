@@ -17,5 +17,4 @@ RUN set -ex \
 
 EXPOSE 1595
 
-ENTRYPOINT ["./kube-speed"]
-CMD ["server"]
+CMD ["./kube-speed", "server"]

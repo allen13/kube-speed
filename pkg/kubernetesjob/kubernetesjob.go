@@ -64,7 +64,7 @@ func (c *Client) CreateKubeSpeedJob(requestID string, completionURL string, kube
 						{
 							Name:    requestID,
 							Image:   kubeSpeedImage,
-							Command: []string{"job", requestID, "--completion-url", completionURL},
+							Command: []string{"./kube-speed", "job", requestID, "--completion-url", completionURL},
 						},
 					},
 					RestartPolicy: v1.RestartPolicyNever,

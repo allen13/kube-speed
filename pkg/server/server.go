@@ -17,9 +17,7 @@ type Request struct {
 }
 
 //Start the kube-speed server
-func Start(completionURL string, kubeSpeedImage string) {
-	ticker := time.NewTicker(time.Second * 1)
-
+func Start(completionURL string, kubeSpeedImage string, jobCount int) {
 	requests := map[string]time.Time{}
 	kubeClient, err := kubernetesjob.New()
 	if err != nil {
@@ -28,7 +26,7 @@ func Start(completionURL string, kubeSpeedImage string) {
 
 	go func() {
 		time.Sleep(time.Second * 2)
-		for range ticker.C {
+		for i := 0; i < jobCount; i++ {
 			requestID := uuid.New()
 			requests[requestID] = time.Now()
 			err = kubeClient.CreateKubeSpeedJob(requestID, completionURL, kubeSpeedImage)
